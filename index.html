@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Sign-up Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <header>
+                <div class="title-container">
+                    <span class="before">The</span>
+                    <img src="./assets/logo.svg" alt="orange-club-logo" id="logo">
+                    <span class="after">Club</span>
+                </div>
+            </header>
+        </div>
+        <div class="content">
+            <h2>
+                <strong>Orange Juice.</strong> Refreshing your soul, delivered daily. Subscribe <i>now</i>. <br>
+                <br>
+                You <i>know</i> you want to.
+            </h2>
+            <form action="" method="get">
+                <fieldset>
+                    <div class="name-row">
+                        <label for="first-name" class="label">First Name</label>
+                        <input type="text" name="first-name" id="first-name" />
+                        <label for="last-name" class="label">Last Name</label>
+                        <input type="text" name="last-name" id="last-name" />
+                    </div>
+                    <div class="email-phone-row">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" name="email" id="email" />
+                        <label for="phone" class="label">Phone</label>
+                        <input type="tel" name="phone" id="phone" />
+                    </div>
+                    <div class="password-row">
+                        <label for="password" class="password">Password</label>
+                        <input type="password" name="password" id="password" />
+                        <label for="confirm-password" class="password">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="password" />
+                    </div>
+                </fieldset>
+                <div>
+                    <label for="submit-button" class="submit"></label>
+                    <input type="submit" name="submit-button">
+                </div>
+            </form>
+            <p class="already-account">Already have an account? <a href="index.html">Login</a></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Made by &#160<a href="https://github.com/kronjuvel1" target="_blank" id="github-link">Roberto Santos</a></p>
+    </footer>
+</body>
+
+</html>
