@@ -22,40 +22,63 @@
                     <span class="after">Club</span>
                 </div>
             </header>
+            <p id="photo-credit">Photo by <a href="https://www.thenixcreative.com/" target="_blank">Tyler Nix</a> on <a
+                    href="https://unsplash.com/photos/white-and-brown-labeled-bottle-beside-white-box-JN7JJoLdvjs"
+                    target="_blank">Unsplash</a></p>
         </div>
         <div class="content">
-            <h2>
-                <strong>Orange Juice.</strong> Refreshing your soul, delivered daily. Subscribe <i>now</i>. <br>
-                <br>
-                You <i>know</i> you want to.
-            </h2>
-            <form action="" method="get">
-                <fieldset>
-                    <div class="name-row">
-                        <label for="first-name" class="label">First Name</label>
-                        <input type="text" name="first-name" id="first-name" />
-                        <label for="last-name" class="label">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" />
+            <div class="content-section-text">
+                <h2>
+                    <strong>The only Orange Juice you'll ever need.</strong> Delivered <i>daily</i>. <br>
+                    You <i>know</i> you want to.
+                </h2>
+            </div>
+            <div class="content-section-form">
+                <form action="" method="get">
+                    <p class="form-title">Register</p>
+                    <span class="required-msg">Required fields marked by *</span>
+                    <section>
+                        <div>
+                            <label for="first-name" class="label">First Name</label>
+                            <input type="text" name="first-name" class="input" id="first-name" placeholder="John" required />
+                        </div>
+                        <div>
+                            <label for="last-name" class="label">Last Name</label>
+                            <input type="text" name="last-name" class="input" id="last-name" placeholder="Doe" required />
+                        </div>
+                        <div>
+                            <label for="email" class="label">Email</label>
+                            <input type="email" name="email" class="input" id="email" placeholder="example@email.com" pattern="/^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gim;
+                            " />
+                        </div>
+                        <div>
+                            <label for="phone" class="label">Phone</label>
+                            <div class="phone-div">
+                                <select name="phone-code" id="phone-code">
+                                    <option data-countryCode="PH" value="63" Selected>(+63) PH</option>
+                                    <option data-countryCode="US" value="1">USA (+1)</option>
+                                    <optgroup label="Other countries">
+                                        <option data-countryCode="FR" value="33">FR (+33)</option>
+                                </select>
+                                <input type="tel" name="phone" class="input" id="phone" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="password">Password</label>
+                            <input type="password" name="password" class="input" id="password" required />
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="password">Confirm Password</label>
+                            <input type="password" name="confirm-password" class="input" id="confirm-password"
+                                required />
+                        </div>
+                    </section>
+                    <div class="form-buttons">
+                        <input type="submit" name="submit-button">
+                        <p class="already-account">Already have an account? <a href="index.html" id="login-button">Login</a></p>
                     </div>
-                    <div class="email-phone-row">
-                        <label for="email" class="label">Email</label>
-                        <input type="email" name="email" id="email" />
-                        <label for="phone" class="label">Phone</label>
-                        <input type="tel" name="phone" id="phone" />
-                    </div>
-                    <div class="password-row">
-                        <label for="password" class="password">Password</label>
-                        <input type="password" name="password" id="password" />
-                        <label for="confirm-password" class="password">Confirm Password</label>
-                        <input type="password" name="confirm-password" id="password" />
-                    </div>
-                </fieldset>
-                <div>
-                    <label for="submit-button" class="submit"></label>
-                    <input type="submit" name="submit-button">
-                </div>
-            </form>
-            <p class="already-account">Already have an account? <a href="index.html">Login</a></p>
+                </form>
+            </div>
         </div>
     </div>
     <footer class="footer">
