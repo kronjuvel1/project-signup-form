@@ -1,11 +1,13 @@
 :root {
-    --background-color: #ebe6e3;
+    --background-color: #f1ece8;
     --background-color-2: #454545;
     --background-color-3: #f5f2f0;
     --primary-color: #FF6000;
+    --primary-color-transparent: rgba(255, 96, 0, 0.8);
     --secondary-color: #f1bf46;
     --text-color: #454545;
     --text-color-2: #f8f5f3;
+    --text-color-3: #1087e3;
 }
 
 * {
@@ -26,7 +28,11 @@ body {
 a,
 a:link,
 a:visited,
-a:hover, #github-link {
+a:hover,
+#github-link,
+#github-link:hover,
+#github-link:visited {
+    color: inherit;
     font-weight: bold;
     text-decoration: none;
 }
@@ -34,6 +40,11 @@ a:hover, #github-link {
 .container {
     display: flex;
     flex: 1;
+}
+
+header {
+    background-color: var(--primary-color-transparent);
+    padding: 2rem 0;
 }
 
 .hero {
@@ -58,9 +69,8 @@ a:hover, #github-link {
 }
 
 .title-container>span {
-    font-size: 4rem;
-    -webkit-text-stroke: var(--text-color) 0.5px;
-    color: var(--primary-color);
+    font-size: 4.5rem;
+    color: var(--secondary-color);
 }
 
 .before {
@@ -82,11 +92,11 @@ a:hover, #github-link {
 }
 
 #photo-credit>a {
-    color: var(--text-color);
+    color: var(--secondary-color);
 }
 
-#photo-credit>a:hover, 
-#github-link:hover, 
+#photo-credit>a:hover,
+#github-link:hover,
 #login-button:hover {
     color: var(--text-color);
     font-weight: bold;
@@ -96,7 +106,7 @@ a:hover, #github-link {
 }
 
 #login-button {
-    color: var(--primary-color);
+    color: var(--text-color-3);
 }
 
 /* content section */
@@ -108,28 +118,30 @@ a:hover, #github-link {
     background-color: var(--background-color);
 }
 
-.content-section-text>h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
+.content-section-text {
     margin: 3rem 0 0 3rem;
+    line-height: 1.5;
+}
+
+.content-section-text>h2 {
+    font-size: 3rem;
+}
+
+h2>#h2-orangejuice {
+    color: var(--primary-color);
 }
 
 .form-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--primary-color);
     margin-bottom: 1rem;
-}
-
-.required-msg {
-    font-size: 0.8rem;
 }
 
 form {
     background-color: var(--background-color-3);
     padding: 3rem;
     margin-top: 4rem;
-    box-shadow: 0 90px 30px #e5e4e4;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -141,8 +153,6 @@ section {
 
 section>div {
     flex-basis: 40%;
-    margin-bottom: 1ch;
-    min-width: 300px;
 }
 
 label {
@@ -152,12 +162,8 @@ label {
     padding: 2px 0px;
 }
 
-div>label::after {
-    content: ' *';
-    color: red;
-}
-
-.input {
+.input,
+#email {
     height: 2.5rem;
     font-size: 1.2rem;
     width: calc(100%);
@@ -165,7 +171,6 @@ div>label::after {
     font-family: 'Poppins', sans-serif;
     border: 1px solid #d9dbdf;
     border-radius: 3px;
-    transition: all 0.2s ease-in-out;
 }
 
 .input:valid {
@@ -173,19 +178,12 @@ div>label::after {
 }
 
 .input:invalid {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--background-color);
 }
 
-input[type=submit] {
-    padding: 15px 55px;
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    background-color: var(--background-color-2);
-    color: var(--text-color-2);
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.1s ease-in;
-    transition: transform 0.1s ease-out;
+input:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .phone-div {
@@ -197,21 +195,32 @@ input[type=submit] {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     display: flex;
-    text-align: center;}
+    border: 1px solid #d9dbdf;
+}
 
 select {
-    height: 2.5rem;
-    width: 6rem;
     border-radius: 4px;
-    border: 1px solid var(--background-color-2);
 }
 
-select:not(:-internal-list-box) {
-    overflow: visible !important;
+input[type=submit] {
+    padding: 15px 55px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    background-color: var(--background-color-2);
+    color: var(--text-color-2);
+    border: none;
+    border-radius: 8px;
 }
 
-.already-account {
-    margin: 1rem 0 0;
+input[type=submit]:hover {
+    background-color: #585858;
+    color: var(--text-color-2);
+    cursor: pointer;
+}
+
+input[type=submit]:active {
+    transform: scale(0.99);
+    transition: 0.05s ease-in;
 }
 
 /* footer */
@@ -221,12 +230,7 @@ select:not(:-internal-list-box) {
     padding: 0.5rem;
 }
 
-.footer > p {
+.footer>p {
     color: var(--background-color);
     text-align: center;
-}
-
-#github-link {
-    text-decoration: none;
-    color: var(--primary-color);
 }
